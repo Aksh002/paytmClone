@@ -1,9 +1,10 @@
 const { Router }=require("express")
-const router=Router()
+const uRoute=Router()
 const { userRoute }=require("./user")
+const { accRoute }=require("./account")
 
-router.use("/user",userRoute)
-router.use("/account",accRoute)
+uRoute.use("/user",userRoute)
+uRoute.use("/account",accRoute)
 module.exports={
-    router 
+    uRoute 
 }

@@ -1,10 +1,16 @@
 const express=require("express")
-const { default: mongoose } = require("mongoose")
 const app=express()
-const { userRoute }=require("./routes/user")
+
+const { uRoute }=require("./routes/Rindex")
+
+const { default: mongoose } = require("mongoose")
+const cors=require("cors")
+const jwt=require("jsonwebtoken") 
 
 app.use(express.json())
-app.use("/api/v1",userRoute)
+app.use(cors())
+
+app.use("/api/v1",uRoute)
 
 app.listen(3000)
 
